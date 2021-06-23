@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+<h3>Makale Güncelleme</h3>
+<hr>
+{% if image %}
+    <figure class="mb-4" style="width:50%"><img class="img-fluid rounded" src="{{image.url}}" alt="..." /></figure>
+    {% endif %}
+
+<form method="post" class="width:80%" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.media }}
+    {{form|crispy}}
+    <br>
+    <br>
+    <div class="btn-toolbar">
+      <button type="submit" class="btn btn-success">Makale Güncelle</button>
+      <button id="button0" class="btn col-6"></button>
+    <a href="{%url 'article:delete' id%}"><button class="btn btn-danger" type="button">Makale Sil</button></a>
+    
+    </div>
+  </form>
+
+
+
+
+
+{% endblock %}

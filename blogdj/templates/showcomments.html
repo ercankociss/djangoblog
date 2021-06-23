@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block body %}
+  
+<h3>Comments sayfası</h3>
+<hr>
+
+<div class="d-flex">
+    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+    <div class="ms-3">
+        <div class="fw-bold">Ercan Koçak</div>
+        comments comments    
+    </div>
+</div> 
+<hr>
+
+
+
+{% for commentitem in comments %}
+<div class="d-flex">
+    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+    <div class="ms-3">
+        <div class="fw-bold">{{commentitem.comment_author}}</div>
+        {{commentitem.comment_content}}  
+        <hr>
+
+    </div>
+</div> 
+   
+{% endfor %}
+
+{% endblock body %}
+
+
